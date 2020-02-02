@@ -1,0 +1,2 @@
+# starscape-custom
+quality garbage
