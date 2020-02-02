@@ -1,0 +1,167 @@
+body {
+	margin: 0;
+	background-color: black;
+	overflow: hidden;
+}
+
+#container {
+	width: 100vw;
+	height: 100vh;
+    background-image: url("../img/komia.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#space {
+	position: absolute;
+	height: 500px;
+	width: 500px;
+	left: calc(50% - 250px);
+	top: calc(50% - 250px);
+	perspective: 500px;
+    z-index: 1;
+}
+
+#meteor {
+    position: absolute;
+    background-image: url("../img/meteor.png");
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: -10px -10px 100px red;
+	left: calc(40% - 50px);
+	top: calc(40% - 50px);
+    z-index: 2;
+    animation: shakings 0.01s linear alternate;
+    animation-iteration-count: 6000;
+}
+
+@keyframes shakings {
+    0% {
+        transform: translate(20%);
+    }
+    50% {
+        transform: translate(0, 10%);
+    }
+    100% {
+        transform: translate(-20%, -10%):
+    }
+}
+
+@webkit-keyframes shakings {
+    0% {
+        transform: translate(20%);
+    }
+    50% {
+        transform: translate(0, 10%);
+    }
+    100% {
+        transform: translate(-20%, -10%):
+    }
+}
+
+.star {
+	position: absolute;
+    background-image: url("../img/fire.png");
+    background-size: cover;
+	border-radius: 50%;
+	transform-style: preserve-3d;
+	animation: brap 5s reverse infinite;
+}
+
+@keyframes brap {
+	100% {
+        transform: translate3d(0,0,-1000px);
+    }
+}
+
+@-webkit-keyframes brap {
+	100% {
+        transform: translate3d(0,0,-1000px);
+    }
+}
+
+#earth {
+	background-image: url("../img/earth.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+	height: 100%;
+	width: 100%;
+    transform: translate(75%, 25%);
+    bottom: 0;
+    z-index: 0;
+    transform-origin: center center;
+    animation: ofug 30s linear forwards;
+}
+
+@keyframes ofug {
+    100% {
+        transform: translate(-25%, -10%);
+        transform: rotateZ(15deg);
+        height: 200%;
+        width: 200%;
+    }
+}
+
+@-webkit-keyframes ofug {
+    100% {
+        transform: translate(-25%, -10%);
+        transform: rotateZ(15deg);
+        height: 200%;
+        width: 200%;
+    }
+}
+
+#red {
+    position: fixed;
+    height: inherit;
+    width: inherit;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    animation: redden 30s linear forwards;
+}
+
+@keyframes redden {
+    0% {
+        background-color: rgba(0,0,0,0);
+    }
+
+    100% {
+        background-color: rgba(255,0,0,0.75);
+    }
+}
+
+@-webkit-keyframes redden {
+    0% {
+        background-color: rgba(0,0,0,0);
+    }
+
+    100% {
+        background-color: rgba(255,0,0,0.75);
+    }
+}
+
+/*
+#poop {
+    position: absolute;
+    cursor: default;
+    user-select: none;
+    -moz-user-select: none;
+    color: rgba(255,255,255,0);
+    font-size: 30px;
+    line-height: 20px;
+    width: 200px;
+	left: calc(60% - 100px);
+	top: calc(50% - 10px);
+    z-index: 3;
+    animation: funnyjoke 2s linear forwards;
+    animation-delay: 28s;
+}
+
+@keyframes funnyjoke {
+    100% {
+        color: rgba(255,255,255,1);
+    }
+}*/
